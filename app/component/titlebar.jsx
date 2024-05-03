@@ -30,9 +30,9 @@ const TitleBar = ()=> {
                 {
                   drop ?
                   <Dropdown title="MENU">
-                    <Dropdown.Item>UPLOAD</Dropdown.Item>
-                    <Dropdown.Item>FUND</Dropdown.Item>
-                    <Dropdown.Item>ABOUT</Dropdown.Item>
+                    <a href='/upload'><Dropdown.Item>UPLOAD</Dropdown.Item></a>
+                    <a href='/fund'><Dropdown.Item>FUND</Dropdown.Item></a>
+                    <a href='/'><Dropdown.Item>ABOUT</Dropdown.Item></a>
                   </Dropdown>
                   :
                   <>
