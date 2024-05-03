@@ -120,6 +120,7 @@ export default function Home() {
       <div className={styles.description}>
 		<TitleBar />
 		<div className={styles.uploadSection}>
+			<div className={styles.mainSection}>
 			<div className={styles.labelText}>
 				<h2 className={playfair.className}>Select the Files to Upload</h2>
 			</div>
@@ -131,6 +132,7 @@ export default function Home() {
 				<div>
 					<button onClick={uploadFolder}>Upload</button>
 				</div>
+			</div>
 			</div>
 			<div className={styles.urlSection}>
 				<h2 className={styles.url}>{url}</h2> 

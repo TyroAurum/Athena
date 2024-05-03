@@ -3,6 +3,10 @@ import styles from './titlebar.module.css';
 import { useEffect, useState } from 'react';
 import clsx from 'clsx';
 import Image from 'next/image';
+import { Dropdown } from 'rsuite';
+
+
+
 
 const TitleBar = ()=> {
 
@@ -15,10 +19,21 @@ const TitleBar = ()=> {
                 ATHENA
               </a>
               <ul className={styles.menuOptions}>
-                <li><a href='/upload'>UPLOAD</a></li>
-                <li><a href='/fund'>FUND</a></li>
-                <li><a href='/'>ABOUT</a></li>
-                <li ><w3m-button /></li>
+                {
+                  window.innerWidth < 720 ?
+                  <Dropdown title="MENU">
+                    <Dropdown.Item>UPLOAD</Dropdown.Item>
+                    <Dropdown.Item>FUND</Dropdown.Item>
+                    <Dropdown.Item>ABOUT</Dropdown.Item>
+                  </Dropdown>
+                  :
+                  <>
+                    <li><a href='/upload'>UPLOAD</a></li>
+                    <li><a href='/fund'>FUND</a></li>
+                    <li><a href='/'>ABOUT</a></li>
+                  </>
+                }
+                <li className={styles.account}><w3m-button /></li>
               </ul>
             </div>
           </header>

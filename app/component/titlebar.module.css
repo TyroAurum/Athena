@@ -38,10 +38,35 @@
 @media only screen and (max-width: 767px) {
   .titleBar{
       width: 100vw;
-      color: black;
+      color: white;
       text-align: -webkit-center;
       z-index: 5;
-    
+      margin-top: 2vh;
+    }
+
+    .title{
+      align-content: center;
+      margin-left: 5vw;
+      margin-right: 15vw;
+      font-size: 1.6em;
+    }
+
+  .titleBar>div{
+    display: flex;
+    flex-direction: row;
+  }
+
+    .menuOptions{
+      display: flex;
+      flex-direction: row;
+    }
+
+    .menuOptions>li{
+
+      list-style: none;
+    }
+    .account{
+      margin-left: 10vw;
     }
 
 

@@ -4,6 +4,7 @@ import styles from "./page.module.css";
 import { WebIrys } from "@irys/sdk";
 import { ethers } from "ethers";
 import TitleBar from "./component/titlebar";
+import { useState, useEffect } from "react";
 import { Playfair_Display, Grandstander } from "next/font/google";
 import { Steps } from "rsuite";
 import ALLTIME_SVG from "../public/24by7.svg"
@@ -14,6 +15,8 @@ import INSTA_SVG from "../public/instagram.svg"
 import LINKEDIN_SVG from "../public/linkedin.svg"
 import TWITTER_SVG from "../public/twitter.svg"
 import FATHER_SVG from "../public/father.svg"
+import clsx from "clsx";
+import { set } from "rsuite/esm/utils/dateUtils";
 
 const playfair = Playfair_Display({
 	weight: '400',
@@ -103,6 +106,15 @@ const uploadFolder = async () => {
 
 
 export default function Home() {
+	const [sscreen, setSscreen] = useState();
+
+	useEffect(()=>{
+		console.log(sscreen)
+		if(window.innerWidth < 720)
+			setSscreen(true)
+		else
+			setSscreen(false);
+		},[])
 
   return (
     <main className={styles.main}>
@@ -152,7 +164,7 @@ export default function Home() {
 				<div className={styles.thirdsection}>
 					<h2 className={grandstander.className}>Save your docs in just 3 STEPS !</h2>
 					<div className={styles.stepsegment}>
-						<Steps current={1}>
+						<Steps current={1} vertical={sscreen}>
 							<Steps.Item title="Fund the node" />
 							<Steps.Item title="Upload the Docs" />
 							<Steps.Item title="Get the URL" />
