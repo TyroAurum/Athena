@@ -3,6 +3,7 @@ import "./globals.css";
 import { Web3Modal } from "@/context/web3modal";
 import { CustomProvider } from 'rsuite';
 import 'rsuite/dist/rsuite-no-reset.min.css';
+import { SpeedInsights } from "@vercel/speed-insights/next"
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -18,6 +19,7 @@ export default function RootLayout({ children }) {
         <Web3Modal>
           <CustomProvider>
             {children}
+            <SpeedInsights />
           </CustomProvider>
         </Web3Modal>
         </body>
