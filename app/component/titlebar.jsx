@@ -9,6 +9,14 @@ import { Dropdown } from 'rsuite';
 
 
 const TitleBar = ()=> {
+  const [drop, setDrop] = useState();
+
+  useEffect(()=>{
+    if(window.innerWidth < 720)
+      setDrop(true)
+    else
+      setDrop(false)
+  })
 
     return(
         <>
@@ -20,7 +28,7 @@ const TitleBar = ()=> {
               </a>
               <ul className={styles.menuOptions}>
                 {
-                  window.innerWidth < 720 ?
+                  drop ?
                   <Dropdown title="MENU">
                     <Dropdown.Item>UPLOAD</Dropdown.Item>
                     <Dropdown.Item>FUND</Dropdown.Item>
